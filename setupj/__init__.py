@@ -22,7 +22,7 @@ def notebook_transparent():
     )
 
 
-class _PlotlyConfig:
+class _NotebookPlotlyRender:
     def default(self):
         """Do not change the default plotly renderer of fig.show()"""
         self._set_renderer(None)
@@ -75,4 +75,41 @@ class _PlotlyConfig:
         BaseFigure.show = show
 
 
-notebook_renderplotly = _PlotlyConfig()
+notebook_plotly_render = _NotebookPlotlyRender()
+
+
+class _NotebookPlotlyThemeVbt:
+    def github_dark(self):
+        import plotly.graph_objects as go
+        import plotly.io as pio
+        import vectorbtpro as vbt
+
+        pio.templates["my_theme"] = go.layout.Template(
+            layout_paper_bgcolor="#22272E",
+            layout_plot_bgcolor="#22272E",
+        )
+        vbt.settings["plotting"]["layout"]["template"] = "vbt_dark+my_theme"
+
+    def solarized_dark(self):
+        import plotly.graph_objects as go
+        import plotly.io as pio
+        import vectorbtpro as vbt
+
+        pio.templates["my_theme"] = go.layout.Template(
+            layout_paper_bgcolor="#00212B",
+            layout_plot_bgcolor="#00212B",
+        )
+        vbt.settings["plotting"]["layout"]["template"] = "vbt_dark+my_theme"
+
+    def solarized_light(self):
+        import plotly.graph_objects as go
+        import plotly.io as pio
+        import vectorbtpro as vbt
+
+        pio.templates["my_theme"] = go.layout.Template(
+            layout_paper_bgcolor="#F7F0E0",
+        )
+        vbt.settings["plotting"]["layout"]["template"] = "vbt_light+my_theme"
+
+
+notebook_plotly_theme_vbt = _NotebookPlotlyThemeVbt()
