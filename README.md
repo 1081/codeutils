@@ -1,18 +1,18 @@
-# codeutils
+# setupcode
 
 python setup configs settings snippets
 
 ## install
 
-`pip install -e codeutils`
+`pip install -e setupcode`
 
 ## usage
 
 ```python
-import codeutils
+import setupcode
 
-codeutils.notebook.autoreload()
-codeutils.notebook.output_transparent()
-codeutils.notebook.plotly_render.default()
-codeutils.notebook.plotly_theme_vbt.github_dark()
+setupcode.notebook.autoreload()
+setupcode.notebook.output_transparent()
+setupcode.notebook.plotly_render.default()
+setupcode.notebook.plotly_theme_vbt.github_dark()
 ```

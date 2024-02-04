@@ -4,19 +4,19 @@ requires = ["hatchling"]
 
 [project]
 description = 'setup configs settings snippets'
-keywords = ["configs", "settings", "snippets"]
+keywords = ["setup", "configs", "settings", "snippets"]
 license = "MIT"
-name = "codeutils"
+name = "setupcode"
 readme = "README.md"
 requires-python = ">=3.7"
-version = "1.0"
+version = "1.1"
 # dependencies = ["ipython", "ipykernel"]
 
 [project.urls]
-homepage = "https://github.com/1081/codeutils"
+# homepage = "https://github.com/1081/setupcode"
 
 [tool.hatch.build.targets.wheel]
-packages = ["codeutils"]
+packages = ["setupcode"]
 
 [tool.ruff]
 ignore = ["E741", "E501", "C408", "PD901", "SIM117", "PD011", "B018", "E402"]
