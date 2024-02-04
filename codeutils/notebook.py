@@ -1,4 +1,4 @@
-def notebook_autoreload():
+def autoreload():
     from IPython import get_ipython
 
     """Import this function in a jupyter notebook and run it to enable autoreload of modules"""
@@ -6,7 +6,7 @@ def notebook_autoreload():
     get_ipython().run_line_magic("autoreload", "2")
 
 
-def notebook_transparent():
+def output_transparent():
     from IPython import get_ipython
 
     """Import this function in a jupyter notebook and run it to set the background to transparent"""
@@ -22,7 +22,7 @@ def notebook_transparent():
     )
 
 
-class _NotebookPlotlyRender:
+class _PlotlyRender:
     def default(self):
         """Do not change the default plotly renderer of fig.show()"""
         self._set_renderer(None)
@@ -75,10 +75,10 @@ class _NotebookPlotlyRender:
         BaseFigure.show = show
 
 
-notebook_plotly_render = _NotebookPlotlyRender()
+plotly_render = _PlotlyRender()
 
 
-class _NotebookPlotlyThemeVbt:
+class _PlotlyThemeVbt:
     def github_dark(self):
         import plotly.graph_objects as go
         import plotly.io as pio
@@ -112,4 +112,4 @@ class _NotebookPlotlyThemeVbt:
         vbt.settings["plotting"]["layout"]["template"] = "vbt_light+my_theme"
 
 
-notebook_plotly_theme_vbt = _NotebookPlotlyThemeVbt()
+plotly_theme_vbt = _PlotlyThemeVbt()

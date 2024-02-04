@@ -6,17 +6,17 @@ requires = ["hatchling"]
 description = 'setup configs settings snippets'
 keywords = ["configs", "settings", "snippets"]
 license = "MIT"
-name = "setupj"
+name = "codeutils"
 readme = "README.md"
 requires-python = ">=3.7"
 version = "1.0"
 # dependencies = ["ipython", "ipykernel"]
 
 [project.urls]
-homepage = "https://github.com/1081/setupj"
+homepage = "https://github.com/1081/codeutils"
 
 [tool.hatch.build.targets.wheel]
-packages = ["setupj"]
+packages = ["codeutils"]
 
 [tool.ruff]
 ignore = ["E741", "E501", "C408", "PD901", "SIM117", "PD011", "B018", "E402"]
