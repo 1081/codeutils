@@ -75,7 +75,7 @@ class _PlotlyRender:
         BaseFigure.show = show
 
 
-plotly_render = _PlotlyRender()
+plotly_render : _PlotlyRender = _PlotlyRender()
 
 
 class _PlotlyThemeVbt:
@@ -112,4 +112,9 @@ class _PlotlyThemeVbt:
         vbt.settings["plotting"]["layout"]["template"] = "vbt_light+my_theme"
 
 
-plotly_theme_vbt = _PlotlyThemeVbt()
+plotly_theme_vbt : _PlotlyThemeVbt = _PlotlyThemeVbt()
+
+
+def pd_plotting_backend_plotly():
+    import pandas as pd
+    pd.options.plotting.backend = "plotly"
